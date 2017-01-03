@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Map :access-token="accessToken" :options="options"><Map>
+    <Map :access-token="accessToken" :options="options"></Map>
   </div>
 </template>
 
