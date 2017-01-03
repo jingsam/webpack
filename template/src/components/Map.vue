@@ -19,8 +19,8 @@ export default {
       required: true,
       validator (value) {
         return !!value.style{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
-      }{{#if_eq lintConfig "airbnb"}},{{/if_eq}
-    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}
+      }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   },
 
   ready () {
