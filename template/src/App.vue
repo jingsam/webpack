@@ -1,64 +1,45 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p>
-      To get a better understanding of how this boilerplate works, check out
-      <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
-      It is also recommended to go through the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-      If you have any issues with the setup, please file an issue at this boilerplate's
-      <a href="https://github.com/vuejs-templates/webpack" target="_blank">repository</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
+    <Map :access-token="accessToken" :options="options"><Map>
   </div>
 </template>
 
+
 <script>
-import Hello from './components/Hello'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+import Map from './components/Map'{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 
 export default {
+  data () {
+    return {
+      accessToken: 'pk.eyJ1IjoibWFwZXIiLCJhIjoiY2l4Z3gxaTliMDAxMjJ5dG1iNjAxcmJ3MiJ9.SzNnsW1nwiAraIkhlYlPfA',
+      options: {
+        style: 'mapbox://styles/mapbox/streets-v9',
+        attributionControl: false,
+        center: [-74.50, 40],
+        zoom: 9{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+      }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
+  },
+
   components: {
-    Hello{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
+    Map{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
   }{{#if_eq lintConfig "airbnb"}},{{/if_eq}}
 }{{#if_eq lintConfig "airbnb"}};{{/if_eq}}
 </script>
 
+
 <style>
-html {
+html, body {
   height: 100%;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+/** {
+  outline: red solid 1px;
+}*/
+</style>
 
+<style scoped>
 #app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
+  height: 100%;
 }
 </style>
